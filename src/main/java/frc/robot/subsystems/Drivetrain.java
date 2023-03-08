@@ -37,6 +37,11 @@ public class Drivetrain extends SubsystemBase {
     diffDrive.arcadeDrive(moveSpeed, rotateSpeed);
     
   }
+  
+  public void mechDrive(double moveSpeed, double rotateSpeed){
+    diffDrive.arcadeDrive(moveSpeed, rotateSpeed);
+    
+  }
 
   @Override
   public void periodic() {
