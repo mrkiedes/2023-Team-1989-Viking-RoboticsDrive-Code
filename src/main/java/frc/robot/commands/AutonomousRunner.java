@@ -14,6 +14,8 @@ public class AutonomousRunner extends SequentialCommandGroup {
   public AutonomousRunner() {
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
-    addCommands(new DriveDistance(5), new RotateDistance(3));
+    addCommands(
+      new DriveDistance(5), 
+      new RotateDistance(3));
   }
 }

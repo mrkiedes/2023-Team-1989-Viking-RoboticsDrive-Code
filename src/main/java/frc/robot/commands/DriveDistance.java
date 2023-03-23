@@ -23,6 +23,7 @@ public class DriveDistance extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    System.out.println("DriveDistance Executing");
     stopwatch.restart();
   }
 
