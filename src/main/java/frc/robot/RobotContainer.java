@@ -6,6 +6,7 @@ package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.ArcadeDrive;
+import frc.robot.commands.MecDrive;
 import frc.robot.commands.Autos;
 import frc.robot.commands.AutonomousRunner;
 import frc.robot.commands.ExampleCommand;
@@ -37,7 +38,7 @@ public class RobotContainer {
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
-    m_drivetrain.setDefaultCommand(new ArcadeDrive());
+    m_drivetrain.setDefaultCommand(new MecDrive());
     
     // Configure the trigger bindings
     configureBindings();

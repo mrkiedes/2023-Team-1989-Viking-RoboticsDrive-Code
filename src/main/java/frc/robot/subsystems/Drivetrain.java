@@ -5,6 +5,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
@@ -20,6 +21,8 @@ public class Drivetrain extends SubsystemBase {
   private final MotorControllerGroup m_rightMotors;
 
   DifferentialDrive diffDrive;
+  MecanumDrive mechDrive;
+
 
   public Drivetrain() {
     m_FrontLeft = new WPI_TalonSRX(3);
@@ -31,6 +34,8 @@ public class Drivetrain extends SubsystemBase {
     m_rightMotors = new MotorControllerGroup(m_FrontRight, m_FrontLeft);
 
     diffDrive = new DifferentialDrive(m_leftMotors, m_rightMotors);
+    
+    mechDrive = new MecanumDrive(m_FrontLeft, m_BackLeft, m_FrontRight, m_BackRight);
   }
 
   public void arcadeDrive(double moveSpeed, double rotateSpeed){
@@ -38,8 +43,8 @@ public class Drivetrain extends SubsystemBase {
     
   }
   
-  public void mechDrive(double moveSpeed, double rotateSpeed){
-    diffDrive.arcadeDrive(moveSpeed, rotateSpeed);
+  public void mechDrive(double y, double x, double z){
+    mechDrive.driveCartesian(y,x,z);
     
   }
 
