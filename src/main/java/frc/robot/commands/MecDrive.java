@@ -24,11 +24,14 @@ public class MecDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-      double y = RobotContainer.driveStick.getY();
-      double x = RobotContainer.driveStick.getX();
-      double z = RobotContainer.driveStick.getZ();
+    double vertical;
+    double horizontal;
+    double turn;
+    vertical = RobotContainer.driveStick.getY();
+    horizontal = RobotContainer.driveStick.getX();
+    turn = RobotContainer.utilStick.getX();
 
-      RobotContainer.m_drivetrain.mechDrive(y, x, z);
+      RobotContainer.m_drivetrain.mechDrive(vertical, horizontal, turn);
 
   }
 
