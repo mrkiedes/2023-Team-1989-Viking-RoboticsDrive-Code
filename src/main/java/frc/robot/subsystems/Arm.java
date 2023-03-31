@@ -4,17 +4,28 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import frc.robot.RobotContainer;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 public class Arm extends SubsystemBase {
   /** Creates a new Arm. */
   private final WPI_TalonSRX m_elbow;
   private final WPI_TalonSRX m_wrist;
+  public static JoystickButton armButton = new JoystickButton(RobotContainer.driveStick,5);
 
   public Arm() {
     m_elbow = new WPI_TalonSRX(5);
     m_wrist = new WPI_TalonSRX(6);
+  }
+
+  public void armMove(boolean armButton, double speed){
+  while(armButton = true){
+      m_elbow.set(1);
+    }
+      m_elbow.set(0);
   }
 
   public void upDown(double speed){
